@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Curso Abastece</string>
+
+    <string name="navigation_drawer_abrir">Abre gaveta de navegação</string>
+    <string name="navigation_drawer_fechar">Fecha gaveta de navegação</string>
 </resources>
