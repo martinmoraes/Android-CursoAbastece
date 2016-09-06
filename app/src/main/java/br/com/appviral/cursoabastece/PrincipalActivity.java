@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 public class PrincipalActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -44,6 +45,13 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
         Toast.makeText(PrincipalActivity.this, "Foi clicado no menu", Toast.LENGTH_SHORT).show();
         return super.onOptionsItemSelected(item);
     }
+
+
+    public void abreRegistraAbastecimento(View view){
+        Toast.makeText(this,"Abre Activity Registra abastecimento.", Toast.LENGTH_SHORT).show();
+    }
+
+
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
