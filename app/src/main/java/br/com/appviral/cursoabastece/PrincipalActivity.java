@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 public class PrincipalActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -41,6 +43,13 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
         getMenuInflater().inflate(R.menu.activity_principal_toolbar, menu);
         return true;
     }
+
+
+    public void abreRegistraAbastecimento(View view){
+        Toast.makeText(this,"Abre Activity Registra abastecimento.", Toast.LENGTH_SHORT).show();
+    }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
