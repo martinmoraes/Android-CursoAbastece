@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".AbasteceActivity">
+        <activity android:name=".AbasteceActivity"
+            android:parentActivityName=".PrincipalActivity">
         </activity>
     </application>
 
