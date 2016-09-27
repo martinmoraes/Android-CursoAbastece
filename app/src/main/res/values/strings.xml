@@ -3,4 +3,11 @@
 
     <string name="navigation_drawer_abrir">Abre gaveta de navegação</string>
     <string name="navigation_drawer_fechar">Fecha gaveta de navegação</string>
+    <string name="combustivel">Combustível</string>
+    <string name="total">Total</string>
+    <string name="preco">Preço</string>
+    <string name="litros">Litros</string>
+    <string name="data">Data</string>
+
+
 </resources>

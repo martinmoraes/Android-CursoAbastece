@@ -43,7 +43,8 @@
             android:layout_marginLeft="12dp"
             android:layout_marginRight="12dp"
             android:layout_marginStart="12dp"
-            android:elevation="2dp">
+            android:elevation="2dp"
+            tools:ignore="UnusedAttribute">
 
             <!--Tipo do compustivel-->
             <LinearLayout
@@ -56,11 +57,12 @@
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/ic_gas_station_black_24dp"
                     android:id="@+id/imageView2"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    tools:ignore="ContentDescription"/>
 
                 <TextView
-                    android:text="Combustível"
-                    android:layout_width="wrap_content"
+                    android:text="@string/combustivel"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView2"
                     android:layout_weight="1"
@@ -88,11 +90,12 @@
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/ic_currency_usd_black_24dp"
                     android:id="@+id/imageView3"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    tools:ignore="ContentDescription"/>
 
                 <TextView
-                    android:text="Total"
-                    android:layout_width="wrap_content"
+                    android:text="@string/total"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView3"
                     android:layout_weight="1"
@@ -122,11 +125,12 @@
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/ic_currency_usd_black_24dp"
                     android:id="@+id/imageView4"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    tools:ignore="ContentDescription"/>
 
                 <TextView
-                    android:text="Preço"
-                    android:layout_width="wrap_content"
+                    android:text="@string/preco"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView4"
                     android:layout_weight="1"
@@ -156,11 +160,12 @@
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/ic_gauge_black_24dp"
                     android:id="@+id/imageView5"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    tools:ignore="ContentDescription"/>
 
                 <TextView
-                    android:text="Litros"
-                    android:layout_width="wrap_content"
+                    android:text="@string/litros"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView5"
                     android:layout_weight="1"
@@ -190,11 +195,12 @@
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/ic_timetable_black_24dp"
                     android:id="@+id/imageView6"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    tools:ignore="ContentDescription"/>
 
                 <TextView
-                    android:text="Data"
-                    android:layout_width="wrap_content"
+                    android:text="@string/data"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView6"
                     android:layout_weight="1"
