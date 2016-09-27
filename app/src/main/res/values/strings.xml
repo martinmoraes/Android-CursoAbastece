@@ -9,5 +9,10 @@
     <string name="litros">Litros</string>
     <string name="data">Data</string>
 
+    <string-array name="combustivel">
+        <item>Gasolina</item>
+        <item>Alcool</item>
+        <item>Diesel</item>
+    </string-array>
 
 </resources>
