@@ -4,15 +4,15 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_abastecimentos"
-            android:icon="@mipmap/ic_barrel_black_24dp"
+            android:icon="@drawable/ic_barrel_black_24dp"
             android:title="Abastecimentos"/>
         <item
             android:id="@+id/nav_calculo_flex"
-            android:icon="@mipmap/ic_calculadora"
+            android:icon="@drawable/ic_calculadora"
             android:title="Calculo Flex"/>
         <item
             android:id="@+id/nav_sobre"
-            android:icon="@mipmap/ic_alert_circle_black_24dp"
+            android:icon="@drawable/ic_alert_circle_black_24dp"
             android:title="Sobre"/>
     </group>
 </menu>
