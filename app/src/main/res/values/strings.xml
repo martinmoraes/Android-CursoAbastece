@@ -2,4 +2,11 @@
     <string name="app_name">Curso Abastece</string>
     <string name="abre_gaveta">Abre Gaveta</string>
     <string name="fecha_gaveta">Fecha Gaveta</string>
+
+
+    <string-array name="combustivel">
+        <item>Gasolina</item>
+        <item>Alcool</item>
+        <item>Diesel</item>
+    </string-array>
 </resources>
