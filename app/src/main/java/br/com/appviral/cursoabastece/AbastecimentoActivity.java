@@ -1,9 +1,10 @@
 package br.com.appviral.cursoabastece;
 
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
@@ -14,7 +15,8 @@ import android.widget.Toast;
 import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.util.Calendar;
-import java.util.Currency;
+
+import br.com.appviral.cursoabastece.persistencia.DbSqlite;
 
 public class AbastecimentoActivity extends AppCompatActivity {
     Spinner mTipoCombustivelSpinner;
@@ -42,6 +44,13 @@ public class AbastecimentoActivity extends AppCompatActivity {
         mLitrosEditText = (EditText) findViewById(R.id.litrosEditText);
         mDataEditText = (EditText) findViewById(R.id.dataEditText);
         inicializaComponentes();
+
+
+
+        Log.d("MEUAPP", "Vai chamar DbSqlite");
+        DbSqlite dbSqlite = new DbSqlite(this);
+        dbSqlite.inserir();
+        Log.d("MEUAPP", "Chamou DbSqlite");
 
     }
 
