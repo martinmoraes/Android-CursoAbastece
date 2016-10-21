@@ -15,6 +15,8 @@ import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.util.Calendar;
 
+import br.com.appviral.cursoabastece.persistencia.DbSqlite;
+
 public class AbasteceActivity extends AppCompatActivity {
 
     Spinner mCombustivelSpinner;
@@ -44,6 +46,10 @@ public class AbasteceActivity extends AppCompatActivity {
         mDataEditText = (EditText) findViewById(R.id.dataEditText);
         inicializaComponentes();
 
+/*
+        //Testar a base com uma inserção
+        DbSqlite dbSqlite = new DbSqlite(this);
+        dbSqlite.insere();*/
     }
 
     private void inicializaComponentes(){
