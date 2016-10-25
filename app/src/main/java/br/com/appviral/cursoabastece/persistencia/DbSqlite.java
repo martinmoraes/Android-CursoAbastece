@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import br.com.appviral.cursoabastece.entidade.Abastecimento;
+
 
 /**
  * Created by Martin on 13/10/2016.
@@ -17,20 +19,31 @@ public class DbSqlite extends SQLiteOpenHelper {
 
     public DbSqlite(Context context){
         super(context,NOME_BASE, null, VERSAO_BASE);
-        Log.d("MEUAPP", "Fez constructor DbSqlite");
+        context.deleteDatabase(NOME_BASE);
     }
 
 
+    public void inserir(Abastecimento abastecimento){
+        ContentValues valores = new ContentValues();
+        valores.put("combustivel", abastecimento.getmTipoCombustivel());
+        valores.put("total", abastecimento.getmTotal());
+        valores.put("preco", abastecimento.getmPreco());
+        valores.put("litros", abastecimento.getmLitros());
+        valores.put("data", abastecimento.getmData());
+
+        SQLiteDatabase db = getWritableDatabase();
+        db.insert("abastecimentos", null, valores);
+    }
+
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        Log.d("MEUAPP", "Fez constructor DbSqlite - onCreate");
-        String cria_tabela_abastecimentos = "CREATE TABLE abastecimentos("
-                + "id INTEGER PRIMARY KEY AUTOINCREMENT ,"
-                + "qtde_litros REAL, "
-                + "valor_litro REAL, "
-                + "valor_total REAL, "
-                + "data TEXT, "
-                + "combustivel TEXT)";
+        String cria_tabela_abastecimentos = "CREATE TABLE abastecimentos (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "combustivel TEXT," +
+                "total REAL," +
+                "preco REAL," +
+                "litros REAL," +
+                "data TEXT)";
         sqLiteDatabase.execSQL(cria_tabela_abastecimentos);
     }
 
@@ -38,17 +51,4 @@ public class DbSqlite extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {    }
 
 
-    public boolean inserir() {
-        SQLiteDatabase db = getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-        values.put("qtde_litros", 80);
-        values.put("valor_litro", 3.84);
-        values.put("valor_total", 120);
-        values.put("data", "14/10/2016");
-        values.put("combustivel", "Gasolina");
-        Long id = db.insert("abastecimentos", null, values);
-        db.close();
-        return id > 0;
-    }
 }

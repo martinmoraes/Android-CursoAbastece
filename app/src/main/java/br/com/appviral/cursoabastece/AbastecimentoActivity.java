@@ -16,6 +16,7 @@ import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.util.Calendar;
 
+import br.com.appviral.cursoabastece.entidade.Abastecimento;
 import br.com.appviral.cursoabastece.persistencia.DbSqlite;
 
 public class AbastecimentoActivity extends AppCompatActivity {
@@ -46,12 +47,6 @@ public class AbastecimentoActivity extends AppCompatActivity {
         inicializaComponentes();
 
 
-
-        Log.d("MEUAPP", "Vai chamar DbSqlite");
-        DbSqlite dbSqlite = new DbSqlite(this);
-        dbSqlite.inserir();
-        Log.d("MEUAPP", "Chamou DbSqlite");
-
     }
 
     private void inicializaComponentes() {
@@ -78,7 +73,19 @@ public class AbastecimentoActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.salvar)
-            Toast.makeText(this, "Acionado o Salvar.", Toast.LENGTH_SHORT).show();
+            salvar();
         return super.onOptionsItemSelected(item);
+    }
+
+    private void salvar(){
+        Abastecimento abastecimento = new Abastecimento();
+        abastecimento.setmLitros(mLitrosEditText.getText().toString());
+        abastecimento.setmPreco(mValorPrecoEditText.getText().toString());
+        abastecimento.setmTotal(mValorTotalEditText.getText().toString());
+        abastecimento.setmTipoCombustivel(mTipoCombustivelSpinner.getSelectedItem().toString());
+        abastecimento.setmData(mDataEditText.getText().toString());
+
+        new DbSqlite(this).inserir(abastecimento);
+        finish();
     }
 }
