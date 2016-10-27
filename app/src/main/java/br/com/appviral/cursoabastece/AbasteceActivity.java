@@ -15,6 +15,7 @@ import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.util.Calendar;
 
+import br.com.appviral.cursoabastece.entidade.Abastecimento;
 import br.com.appviral.cursoabastece.persistencia.DbSqlite;
 
 public class AbasteceActivity extends AppCompatActivity {
@@ -31,11 +32,10 @@ public class AbasteceActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();
-        if(actionBar != null){
+        if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setTitle("Abastecer");
         }
-
 
 
         //Vincular os componentes
@@ -52,7 +52,22 @@ public class AbasteceActivity extends AppCompatActivity {
         dbSqlite.insere();*/
     }
 
-    private void inicializaComponentes(){
+    private void salvar() {
+        Abastecimento abastecimento = new Abastecimento();
+        abastecimento.setCombustivel(mCombustivelSpinner.getSelectedItem().toString());
+        abastecimento.setTotal(mTotalEditText.getText().toString());
+        abastecimento.setPreco(mPrecoEditText.getText().toString());
+        abastecimento.setLitros(mLitrosEditText.getText().toString());
+        abastecimento.setData(mDataEditText.getText().toString());
+
+
+        DbSqlite dbSqlite = new DbSqlite(this);
+        dbSqlite.insere(abastecimento);
+
+        finish();
+    }
+
+    private void inicializaComponentes() {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.combustivel, android.R.layout.simple_spinner_dropdown_item);
         mCombustivelSpinner.setAdapter(adapter);
 
@@ -73,8 +88,8 @@ public class AbasteceActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == R.id.salvar)
-            Toast.makeText(this, "Clicou em Salvar.", Toast.LENGTH_SHORT).show();
+        if (item.getItemId() == R.id.salvar)
+            salvar();
         return super.onOptionsItemSelected(item);
     }
 }

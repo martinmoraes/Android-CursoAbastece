@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import br.com.appviral.cursoabastece.entidade.Abastecimento;
+
 /**
  * Created by Martin on 14/10/2016.
  */
@@ -31,13 +33,13 @@ public class DbSqlite extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(cria_tabela_abastecimentos);
     }
 
-    public void insere(){
+    public void insere(Abastecimento abastecimento){
         ContentValues valores = new ContentValues();
-        valores.put("combustivel", "Gasolina");
-        valores.put("total", 400.00);
-        valores.put("preco", 4.00);
-        valores.put("litros", 100.00);
-        valores.put("data", "14/10/2016");
+        valores.put("combustivel", abastecimento.getCombustivel());
+        valores.put("total", abastecimento.getTotal());
+        valores.put("preco", abastecimento.getPreco());
+        valores.put("litros", abastecimento.getLitros());
+        valores.put("data", abastecimento.getData());
 
         SQLiteDatabase db = getWritableDatabase();
         db.insert("abastecimentos", null, valores);
