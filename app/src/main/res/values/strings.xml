@@ -8,6 +8,9 @@
     <string name="preco">Preço</string>
     <string name="litros">Litros</string>
     <string name="data">Data</string>
+    <string name="indicativo_litros">Litros</string>
+    <string name="sifrao">R$</string>
+    <string name="indicativoPorLitro">/litro</string>
 
     <string-array name="combustivel">
         <item>Gasolina</item>
