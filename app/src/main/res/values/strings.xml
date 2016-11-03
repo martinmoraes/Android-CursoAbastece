@@ -2,6 +2,9 @@
     <string name="app_name">Curso Abastece</string>
     <string name="abre_gaveta">Abre Gaveta</string>
     <string name="fecha_gaveta">Fecha Gaveta</string>
+    <string name="litros">litros</string>
+    <string name="cifrao">R$</string>
+    <string name="por_litros">/litros</string>
 
 
     <string-array name="combustivel">

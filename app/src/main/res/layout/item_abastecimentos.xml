@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:padding="8dp"
+             android:clipToPadding="false"
+             android:background="#EEEEEE"
+             android:elevation="2dp"
+             tools:ignore="UnusedAttribute">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <view
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            class="android.support.v7.widget.LinearLayoutCompat"
+            android:id="@+id/view2"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:text="xx/xx/xxxx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dataTextView"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginLeft="2dp"
+                android:layout_marginStart="2dp"
+                tools:ignore="HardcodedText"/>
+
+            <TextView
+                android:text="xx.xx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="false"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/litrosTextView"
+                android:layout_below="@+id/dataTextView"
+                android:layout_marginLeft="2dp"
+                android:layout_marginStart="2dp"
+                tools:ignore="HardcodedText"/>
+
+            <TextView
+                android:text="@string/litros"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="false"
+                android:layout_toRightOf="@+id/litrosTextView"
+                android:layout_toEndOf="@+id/litrosTextView"
+                android:id="@+id/indicativoLitrosTextView"
+                android:layout_marginLeft="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_below="@+id/dataTextView"/>
+
+            <TextView
+                android:text="xxx.xx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/totalTextView"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                tools:ignore="HardcodedText"/>
+
+            <TextView
+                android:text="@string/cifrao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/totalTextView"
+                android:layout_toLeftOf="@+id/totalTextView"
+                android:layout_toStartOf="@+id/totalTextView"
+                android:id="@+id/cifraoTextView"
+                tools:ignore="RelativeOverlap"
+                android:layout_marginEnd="2dp"
+                android:layout_marginRight="2dp"/>
+
+            <TextView
+                android:text="@string/por_litros"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="false"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/indicativoPorLitrosTextView"
+                android:layout_below="@+id/totalTextView"/>
+
+            <TextView
+                android:text="x.xx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="false"
+                android:layout_toLeftOf="@+id/indicativoPorLitrosTextView"
+                android:layout_toStartOf="@+id/indicativoPorLitrosTextView"
+                android:id="@+id/precoTextView"
+                android:layout_below="@+id/cifraoTextView"
+                tools:ignore="HardcodedText"/>
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>
